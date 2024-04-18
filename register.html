@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration form</title>
+    <link rel="stylesheet" href="register.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var bloodgroup = document.forms["mForm"]["bloodgroup"].value;
+            var parentphone = document.forms["mForm"]["parent_phone"].value;
+            var age = document.forms["mForm"]["age"].value;
+            var sex = document.forms["mForm"]["sex"].value;
+            var sport = document.forms["mForm"]["sport"].value;
+
+ 
+
+            // Regular expressions for phone number format
+            var phoneRegex = /^\d{10}$/;
+
+            if (name == "" || bloodgroup == "--Select Blood Group--" || parentName == "" || parentPhone == "" || age == "" || sport == "--Choose your sport--") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            if (!phoneRegex.test(parentPhone)) {
+                alert("Please enter a valid 10-digit parent's phone number");
+                return false;
+            }
+
+            // If all validations pass, display success message and redirect
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <nav>
+            <img src="LOGO.png" class="logo">
+            <ul>
+                <li><a href="project.html">Home</a></li>
+                <li>
+                    <a href="events.html">Events</a>
+                    <ul class="dropdown">
+                        <li><a href="basketball.html">Basketball</a></li>
+                        <li><a href="football.html">Football</a></li>
+                        <li><a href="badminton.html">Badminton</a></li>
+                        <li><a href="tabletennis.html">Table Tennis</a></li>
+                        <li><a href="squash.html">Squash</a></li>
+                    </ul>
+                </li>
+                <li><a href="calendar.html">Info</a></li>
+                <li><a href="see_more.html">See More</a></li>
+                <li><a href="register.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <h3>REGISTRATION FORM</h3>
+    <form name="mForm" action="eventreg.php" method="post" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="bloodgroup">Blood Group:</label>
+        <input type="text" id="bloodgroup" name="bloodgroup" required><br><br>
+
+        <label for="parent_name">Parent's Name:</label>
+        <input type="text" id="parent_name" name="parent_name" required><br><br>
+
+        <label for="parent_phone">Parent's Phone Number:</label>
+        <input type="text" id="parent_phone" name="parent_phone" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required><br><br>
+
+        <label for="sex">Sex:</label>
+        <input type="text" id="sex" name="sex" required><br><br>
+
+        <label for="sport">Sport:</label>
+        <input type="text" id="sport" name="sport" required><br><br>
+
+        
+        <div class="button">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <footer class="footer">
+        <div class="contact-us">
+            <h2>Contact Us</h2>
+            <p>Name: Sidhali Singh</p>
+            <p>Phone: +1234567896</p>
+            <p>Email: sidhali@gmail.com</p>
+            <p>Instagram: athleticon_muj</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; Manipal University Jaipur 2024</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #e6ffe6; /* Light green background */
+    border-radius: 5px;
+    text-align: center;
+    color: black; /* Black text */
+}
+
+legend {
+    font-size: 1.2em; /* Increase font size for legend */
+    font-weight: bold; /* Make legend text bold */
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: 49%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #006600; /* Dark green background on hover */
+    color: white;
+}
+
+#message {
+    color: red;
+    margin-top: 10px;
+}

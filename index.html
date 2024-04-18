@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="subscribe.css">
+<title>User Details</title>  
+
+    <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var pass = document.forms["myForm"]["pass"].value;
+            var phone = document.forms["myForm"]["phone"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var branch = document.forms["myForm"]["branch"].value;
+            var course = document.forms["myForm"]["course"].value;
+
+            // Regular expressions for email, password, and phone number formats
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            var phoneRegex = /^\d{10}$/;
+
+            if (name == "" || pass == "" || phone == "" || email == "" || branch == "" || course == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            if (!passRegex.test(pass)) {
+                alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit");
+                return false;
+            }
+
+            if (!phoneRegex.test(phone)) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            // If all validations pass, display success message and redirect
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>User Information</h2>
+    <form name="myForm" action="insert.php" method="post" onsubmit="return validateForm()">
+        Name: <input type="text" name="name"><br>
+        Password: <input type="password" name="pass"><br>
+        Phone Number: <input type="text" name="phone"><br>
+        Email Id: <input type="text" name="email"><br>
+        Branch: <input type="text" name="branch"><br>
+        Course: <input type="text" name="course"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+

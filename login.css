@@ -1,0 +1,40 @@
+/* Common styles */
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-green-bg {
+    background-color: darkgreen;
+    color: black;
+}
+
+.light-green-bg {
+    background-color: lightgreen;
+}
+
+/* Specific styles for login.html */
+form {
+    margin-top: 20px;
+}
+
+fieldset {
+    padding: 20px;
+    border: 2px solid darkgreen;
+    border-radius: 10px;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+}
